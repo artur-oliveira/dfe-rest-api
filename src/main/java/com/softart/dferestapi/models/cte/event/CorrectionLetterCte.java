@@ -6,8 +6,8 @@ import com.softart.dfe.interfaces.xml.generic.DFObject;
 import com.softart.dfe.models.cte.event.CteCorrectionLetter;
 import lombok.*;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 

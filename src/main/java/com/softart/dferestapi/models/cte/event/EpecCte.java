@@ -6,7 +6,7 @@ import com.softart.dfe.enums.cte.CteEvent;
 import com.softart.dfe.models.cte.event.CteEpec;
 import lombok.*;
 
-import javax.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotEmpty;
 
 @Data
 @AllArgsConstructor

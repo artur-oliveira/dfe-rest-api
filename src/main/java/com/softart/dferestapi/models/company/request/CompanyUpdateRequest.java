@@ -8,8 +8,8 @@ import com.softart.dferestapi.models.info.Address;
 import com.softart.dferestapi.models.info.BasicInfo;
 import lombok.*;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 
 @Data
 @EqualsAndHashCode(callSuper = false)

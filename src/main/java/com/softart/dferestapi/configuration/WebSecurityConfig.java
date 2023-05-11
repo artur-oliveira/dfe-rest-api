@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,7 +21,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity
 @Getter
 public class WebSecurityConfig {
     private final UserDetailsService userDetailsService;
@@ -71,16 +71,16 @@ public class WebSecurityConfig {
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .authorizeRequests()
-                .antMatchers("/api-docs/**").permitAll()
-                .antMatchers("/docs/**").permitAll()
-                .antMatchers("/swagger-ui/**").permitAll()
-                .antMatchers(HealthCheckControllerConstants.BASE_PATH + "/**").permitAll()
-                .antMatchers(AuthControllerConstants.BASE_PATH + "/**").permitAll()
-                .antMatchers(NfeControllerConstants.BASE_PATH + "/**").hasAnyRole("NFE", "ADMIN")
-                .antMatchers(NfceControllerConstants.BASE_PATH + "/**").hasAnyRole("NFCE", "ADMIN")
-                .antMatchers(CteControllerConstants.BASE_PATH + "/**").hasAnyRole("CTE", "ADMIN")
-                .antMatchers(MdfeControllerConstants.BASE_PATH + "/**").hasAnyRole("CTE", "ADMIN")
+                .authorizeHttpRequests()
+                .requestMatchers("/api-docs/**").permitAll()
+                .requestMatchers("/docs/**").permitAll()
+                .requestMatchers("/swagger-ui/**").permitAll()
+                .requestMatchers(HealthCheckControllerConstants.BASE_PATH + "/**").permitAll()
+                .requestMatchers(AuthControllerConstants.BASE_PATH + "/**").permitAll()
+                .requestMatchers(NfeControllerConstants.BASE_PATH + "/**").hasAnyRole("NFE", "ADMIN")
+                .requestMatchers(NfceControllerConstants.BASE_PATH + "/**").hasAnyRole("NFCE", "ADMIN")
+                .requestMatchers(CteControllerConstants.BASE_PATH + "/**").hasAnyRole("CTE", "ADMIN")
+                .requestMatchers(MdfeControllerConstants.BASE_PATH + "/**").hasAnyRole("CTE", "ADMIN")
                 .anyRequest()
                 .authenticated();
 

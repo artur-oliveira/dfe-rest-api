@@ -4,19 +4,19 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.11</version>
+        <version>3.0.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.softart.dfe</groupId>
     <artifactId>dfe-rest-api</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>DF-e Rest API</name>
     <description>The Rest API of the DF-e project</description>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <jjwt.version>0.11.5</jjwt.version>
         <jackson.version>2.13.5</jackson.version>
         <mysql.version>8.0.32</mysql.version>
@@ -24,6 +24,7 @@
         <lombok.version>1.18.26</lombok.version>
         <springdoc-openapi.version>1.7.0</springdoc-openapi.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -87,7 +88,7 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>com.softart</groupId>
+            <groupId>io.github.artur-oliveira</groupId>
             <artifactId>core</artifactId>
             <version>${project.version}</version>
         </dependency>

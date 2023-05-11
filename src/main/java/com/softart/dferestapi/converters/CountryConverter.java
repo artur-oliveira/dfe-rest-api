@@ -2,8 +2,8 @@ package com.softart.dferestapi.converters;
 
 import com.softart.dfe.enums.general.Country;
 
-import javax.persistence.AttributeConverter;
-import javax.persistence.Converter;
+import jakarta.persistence.AttributeConverter;
+import jakarta.persistence.Converter;
 import java.util.Objects;
 
 @Converter(autoApply = true)
